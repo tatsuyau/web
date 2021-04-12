@@ -1,3 +1,9 @@
 {
-  "STAR_CUP_05",
+  "activate_versions" : [
+    "STAR_CUP_06",
+    "P_CUP_03",
+  ],
+  "activate_medals" : [
+    "rate_arena_ufo_cup_06",
+  ],
 }
