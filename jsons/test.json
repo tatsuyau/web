@@ -1,6 +1,7 @@
 {
   "activate_versions" : [
     "P_CUP_03",
+    "STAR_CUP_06",
   ],
   "activate_medals" : [
     "rate_arena_ufo_cup_06",
