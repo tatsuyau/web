@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>adapt. - 素人音楽集団 - Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Noto+Sans+JP:wght@400;900&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glitch': 'glitch 1s linear infinite',
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%, 100%': { transform: 'translate(0)' },
+                            '33%': { transform: 'translate(-2px, 2px)' },
+                            '66%': { transform: 'translate(2px, -2px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-glass {
+                @apply bg-black/40 backdrop-blur-md border border-white/10;
+            }
+            .text-neon {
+                text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+            }
+            .genre-card {
+                @apply relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(99,102,241,0.3)];
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#050505] text-white selection:bg-purple-500/30">
+
+    <!-- Header Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 px-6 py-6 transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-outfit font-black text-3xl tracking-tighter">
+                adapt<span class="text-purple-500">.</span>
+            </a>
+            <div class="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase items-center">
+                <a href="#mission" class="hover:text-purple-400 transition">Mission</a>
+                <a href="#videos" class="hover:text-purple-400 transition">Videos</a>
+                <a href="#genres" class="hover:text-purple-400 transition">Genres</a>
+                <a href="https://www.youtube.com/@music-adapt" target="_blank"
+                    class="px-5 py-2 bg-red-600 rounded-full hover:bg-red-700 transition flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    </svg>
+                    Subscribe
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="band_hero_bg_1772113193564.png"
+                class="w-full h-full object-cover scale-110 motion-safe:animate-pulse-slow" alt="Background">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <div
+                class="inline-block mb-6 px-4 py-1 border border-purple-500/50 bg-purple-500/10 rounded-full text-purple-400 text-xs font-bold tracking-[0.3em] uppercase">
+                Amateur Music Collective
+            </div>
+            <h1 class="font-outfit font-black text-7xl md:text-[10rem] leading-none tracking-tighter mb-8 italic">
+                ADAPT<span class="text-purple-500">.</span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-xl md:text-2xl font-light text-slate-300 leading-relaxed mb-12">
+                昨日までの自分を越え、未踏のジャンルへ。<br class="hidden md:block">
+                日本語ラップと多種多様な音楽の融合を追求する、二人組の音楽実験。
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#videos"
+                    class="group relative px-10 py-4 bg-white text-black font-black rounded-full overflow-hidden transition-all hover:pr-14">
+                    <span class="relative z-10">LATEST VIDEO</span>
+                    <span
+                        class="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">→</span>
+                </a>
+                <a href="https://www.youtube.com/@music-adapt/about" target="_blank"
+                    class="px-10 py-4 border border-white/20 hover:bg-white/10 rounded-full font-bold transition">
+                    View Channel Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div class="w-1 h-12 bg-gradient-to-b from-white to-transparent rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-32 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="font-outfit font-black text-5xl md:text-6xl mb-10 leading-tight">
+                    NO GENRES<br>
+                    <span class="text-purple-500">STAY HUNGRY.</span>
+                </h2>
+                <div class="space-y-8 text-lg text-slate-400">
+                    <p>
+                        2022年12月始動。「adapt.」という名の通り、私たちはあらゆる環境、あらゆる音楽ジャンルに適応し、自らをアップデートし続けることを目的としています。
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-6">
+                        <div class="border-l-2 border-purple-600 pl-6">
+                            <span class="block font-black text-3xl text-white mb-2">01</span>
+                            <span class="text-sm font-bold uppercase text-slate-500 tracking-wider">Experimental</span>
+                            <p class="text-xs mt-2 italic">未経験のジャンルへの果敢な挑戦</p>
+                        </div>
+                        <div class="border-l-2 border-indigo-600 pl-6">
+                            <span class="block font-black text-3xl text-white mb-2">02</span>
+                            <span class="text-sm font-bold uppercase text-slate-500 tracking-wider">Evolution</span>
+                            <p class="text-xs mt-2 italic">作品を重ねるたびに高まる純度</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-purple-500/20 blur-3xl opacity-30 rounded-full"></div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <div
+                            class="h-64 bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center text-4xl">
+                            🎸</div>
+                        <div
+                            class="h-48 bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center text-4xl">
+                            🎹</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="h-48 bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center text-4xl">
+                            🎷</div>
+                        <div
+                            class="h-64 bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center text-4xl">
+                            🥁</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-32 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="font-outfit font-black text-5xl md:text-7xl mb-4 italic">FEATURED</h2>
+                    <p class="text-slate-500 font-bold uppercase tracking-[0.2em]">Latest music videos</p>
+                </div>
+                <a href="https://www.youtube.com/@music-adapt/videos" target="_blank"
+                    class="text-purple-400 hover:text-purple-300 font-bold flex items-center gap-2">
+                    GO TO YOUTUBE <span>→</span>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Main Featured Video -->
+                <div class="md:col-span-2 group">
+                    <div
+                        class="aspect-video w-full rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 shadow-2xl relative">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/nbZ5LpFjhl8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-8 flex justify-between items-start">
+                        <div>
+                            <span
+                                class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-widest uppercase mb-3 inline-block">Funk
+                                x Rap</span>
+                            <h3 class="text-3xl font-black italic">Friday Night Fever</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Videos -->
+                <div class="group">
+                    <div
+                        class="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 hover:border-purple-500/50 transition-colors">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/Slm8LkknZUc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-6">
+                        <span
+                            class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">Thrash
+                            Metal x Rap</span>
+                        <h4 class="text-xl font-bold">Soloban</h4>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div
+                        class="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 hover:border-purple-500/50 transition-colors">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/5IQudYK8i40"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-6">
+                        <span
+                            class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">Thematic
+                            Rap</span>
+                        <h4 class="text-xl font-bold">Halloween Valley</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genre-Hopping Section -->
+    <section id="genres" class="py-32 bg-zinc-950 overflow-hidden relative">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03] font-outfit font-black text-[25rem] italic whitespace-nowrap">
+            CROSSOVER
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <h2 class="text-center font-outfit font-black text-5xl md:text-8xl mb-24 italic tracking-tighter">GENRE
+                HOPPING</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Genre 1 -->
+                <div class="genre-card aspect-square bg-indigo-600/20 group cursor-default">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-4 group-hover:rotate-12 transition">🕺</span>
+                        <h5 class="font-outfit font-black text-2xl mb-2 italic">FUNK</h5>
+                        <p
+                            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">
+                            Rhythm & Rap</p>
+                    </div>
+                </div>
+                <!-- Genre 2 -->
+                <div class="genre-card aspect-square bg-red-600/20 group cursor-default">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-4 group-hover:scale-125 transition">🤘</span>
+                        <h5 class="font-outfit font-black text-2xl mb-2 italic">METAL</h5>
+                        <p
+                            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">
+                            Thrash Intensity</p>
+                    </div>
+                </div>
+                <!-- Genre 3 -->
+                <div class="genre-card aspect-square bg-amber-500/20 group cursor-default">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-4 group-hover:-translate-y-2 transition">🎺</span>
+                        <h5 class="font-outfit font-black text-2xl mb-2 italic">BIG BAND</h5>
+                        <p
+                            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">
+                            Swing & Flow</p>
+                    </div>
+                </div>
+                <!-- Genre 4 -->
+                <div class="genre-card aspect-square bg-purple-600/20 group cursor-default">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-4 group-hover:brightness-125 transition">💄</span>
+                        <h5 class="font-outfit font-black text-2xl mb-2 italic">V-KEI</h5>
+                        <p
+                            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">
+                            Visual Impact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-32 bg-black text-center relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-outfit font-black text-6xl md:text-8xl mb-12 italic leading-none">JOIN THE<br><span
+                    class="text-purple-500">EXPERIMENT.</span></h2>
+            <p class="text-slate-400 mb-12 text-lg">YouTubeチャンネル登録して、最新の音楽実験を目撃してください。</p>
+            <a href="https://www.youtube.com/@music-adapt" target="_blank"
+                class="inline-flex items-center gap-4 px-12 py-6 bg-red-600 hover:bg-red-700 text-white rounded-full font-black text-xl transition-all hover:scale-105 shadow-[0_0_40px_rgba(220,38,38,0.4)]">
+                <svg class="w-8 h-8 fill-white" viewBox="0 0 24 24">
+                    <path
+                        d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                </svg>
+                SUBSCRIBE TO ADAPT.
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="font-outfit font-black text-2xl tracking-tighter">adapt<span class="text-purple-500">.</span>
+            </div>
+            <div class="text-xs text-slate-600 font-bold tracking-widest uppercase">
+                &copy; 2026 adapt. - 素人音楽集団 - | No Genre No Life.
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-white transition">YouTube</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">Twitter</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
