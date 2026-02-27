@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幕末京都史跡巡り フィールドワークのしおり</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            background-color: #f0ede6;
+            color: #332d29;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #faf9f6;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Paper texture overlay */
+        .page-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .border-double-custom {
+            border: 4px double #5d4037;
+        }
+
+        .stamp-clear {
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .mission-checkbox:checked+label .stamp-clear {
+            opacity: 0.8;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d4a373;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 15px;
+            width: 12px;
+            height: 12px;
+            background: #5d4037;
+            border-radius: 50%;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Custom school notebook styles */
+        .notebook-lines {
+            background-image: linear-gradient(#e5e5e5 1px, transparent 1px);
+            background-size: 100% 2em;
+            line-height: 2em;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <div class="page-container mb-8">
+        <!-- 表紙 (COVER) -->
+        <div class="text-center py-12 border-double-custom rounded-lg bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-[#2c3e50] bg-opacity-10"></div>
+            <img src="assets/shiori_cover.png" alt="幕末の京都 ※生成イメージ" class="mx-auto w-3/4 rounded shadow-lg mb-8">
+            <h1 class="text-4xl font-bold mb-2 tracking-widest text-[#5d4037]">幕末京都史跡巡り</h1>
+            <h2 class="text-xl mb-12 tracking-wide text-[#8d6e63]">― フィールドワークのしおり ―</h2>
+
+            <div class="max-w-xs mx-auto text-left border-t border-b border-[#d4a373] py-4 bg-amber-50 bg-opacity-30">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm">学校名：</span>
+                    <input type="text"
+                        class="border-b border-[#5d4037] bg-transparent focus:outline-none w-40 text-center font-bold"
+                        value="〇〇高等学校">
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm">組・班：</span>
+                    <div class="flex gap-2">
+                        <input type="text"
+                            class="border-b border-[#5d4037] bg-transparent focus:outline-none w-12 text-center"
+                            placeholder="　">
+                        組
+                        <input type="text"
+                            class="border-b border-[#5d4037] bg-transparent focus:outline-none w-12 text-center"
+                            placeholder="　">
+                        班
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm">氏　名：</span>
+                    <input type="text"
+                        class="border-b border-[#5d4037] bg-transparent focus:outline-none w-40 text-center font-bold"
+                        placeholder="（お名前）">
+                </div>
+            </div>
+
+            <p class="mt-12 text-xs text-gray-500 italic">旅の合言葉：誠、あるいは大政奉還。</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- コンセプト & はじめに -->
+        <section class="mt-16">
+            <h2 class="text-2xl font-bold border-l-8 border-[#2c3e50] pl-4 mb-6">はじめに：京都という舞台</h2>
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <p class="text-sm leading-7">
+                    京都の街角には、今もあちこちに「幕末」の傷跡や志が残っています。<br>
+                    このフィールドワークでは、教科書の文字を追うだけでは見えない、<br>
+                    <strong>「なぜその場所で事件が起きたのか？」「当時の人々は何を願っていたのか？」</strong><br>
+                    を五感で感じ取ってみましょう。
+                </p>
+            </div>
+        </section>
+
+        <!-- 京都全体マップ -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold border-l-8 border-[#c0392b] pl-4 mb-6">京都全体マップ</h2>
+            <img src="assets/shiori_map.png" alt="京都幕末マップ ※生成イメージ"
+                class="w-full rounded shadow-md border-4 border-white mb-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                <div class="bg-blue-100 p-2 rounded"><strong>壬生エリア</strong><br>新選組の拠点</div>
+                <div class="bg-yellow-100 p-2 rounded"><strong>三条エリア</strong><br>政治の動乱地</div>
+                <div class="bg-red-100 p-2 rounded"><strong>伏見エリア</strong><br>戦火の始まり</div>
+                <div class="bg-green-100 p-2 rounded"><strong>東山エリア</strong><br>維新の到達点</div>
+            </div>
+        </section>
+
+        <!-- 歴史の流れ (Timeline) -->
+        <section class="mt-16 bg-[#faf3e0] p-8 rounded-lg">
+            <h2 class="text-2xl font-bold mb-8 text-center text-[#5d4037]">幕末の歩み：激動の15年</h2>
+            <div class="relative pl-12 space-y-8">
+                <div class="timeline-line"></div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-[#d4a373]">1853</p>
+                    <h3 class="font-bold">黒船来航</h3>
+                    <p class="text-xs">ペリー、浦賀に来航。日本の「鎖国」が終わる。</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-[#d4a373]">1863</p>
+                    <h3 class="font-bold">新選組結成</h3>
+                    <p class="text-xs">壬生の地で浪士組が結成される。</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-[#d4a373]">1864</p>
+                    <h3 class="font-bold">池田屋事件</h3>
+                    <p class="text-xs">三条木屋町。新選組が長州藩などの尊皇攘夷派を襲撃。</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-[#d4a373]">1867</p>
+                    <h3 class="font-bold">大政奉還・龍馬暗殺</h3>
+                    <p class="text-xs">二条城での政権返上。その直後、近江屋で坂本龍馬が散る。</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-[#d4a373]">1868</p>
+                    <h3 class="font-bold">鳥羽・伏見の戦い</h3>
+                    <p class="text-xs">戊辰戦争の開戦。旧幕府軍が「賊軍」となってしまう。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- 各エリア詳細 & ミッション -->
+        <section class="mt-16 space-y-24">
+
+            <!-- 壬生 -->
+            <div class="area-block bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="bg-blue-600 text-white px-3 py-1 text-sm font-bold rounded">LEVEL : 1</span>
+                        <h2 class="text-3xl font-bold mt-2">壬生：新選組の誕生</h2>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">壬生寺 / 八木邸 / 前川邸</div>
+                </div>
+                <p class="mb-6 text-sm">
+                    新選組がかつて「壬生浪（みぶろ）」とよばれ、寺の境内で演習を重ねていた場所。
+                    会津藩の下で京都の治安を守るという使命に燃えた若者たちの「志」を辿ります。
+                </p>
+                <!-- 徒歩ナビ追加 -->
+                <div class="mb-6 bg-gray-50 p-4 border rounded text-xs">
+                    <h5 class="font-bold mb-2 flex items-center gap-1">👣 徒歩ナビ：壬生周辺</h5>
+                    <div class="flex items-center gap-2">
+                        <span>阪急大宮駅</span>
+                        <span class="text-gray-400">→ (徒歩10分) →</span>
+                        <span class="font-bold">壬生寺</span>
+                        <span class="text-gray-400">→ (1分) →</span>
+                        <span class="font-bold">八木邸・前川邸</span>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded border-l-4 border-blue-600">
+                    <h4 class="font-bold mb-4 text-blue-800">🚩 MISSION</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m1" class="mission-checkbox mt-1">
+                            <label for="m1" class="cursor-pointer">
+                                <strong>任務：</strong> 八木邸の鴨居に残る「刀傷」を確認せよ。
+                                <div class="mt-2 hidden mission-success"><img src="assets/shiori_stamps.png"
+                                        class="stamp-clear grayscale brightness-110"></div>
+                            </label>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m2" class="mission-checkbox mt-1">
+                            <label for="m2" class="cursor-pointer">
+                                <strong>思考：</strong> なぜ会津藩は京都の守護を引き受けたのか？（その負担をどう考えていた？）
+                                <div class="mt-2 border-b border-dashed border-gray-400 w-full h-8"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 三条 -->
+            <div class="area-block bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="bg-red-600 text-white px-3 py-1 text-sm font-bold rounded">LEVEL : 2</span>
+                        <h2 class="text-3xl font-bold mt-2">三条：政治の転換点</h2>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">池田屋跡 / 近江屋跡 / 酢屋</div>
+                </div>
+                <p class="mb-6 text-sm">
+                    鴨川沿いの三条・四条エリア。ここは長州藩や土佐藩、そして坂本龍馬が駆け抜けた「政治の中心地」。
+                    国家のあり方を巡る激しい闘争の跡が、近代的な街並みに隠されています。
+                </p>
+                <!-- 徒歩ナビ追加 -->
+                <div class="mb-6 bg-gray-50 p-4 border rounded text-xs">
+                    <h5 class="font-bold mb-2 flex items-center gap-1">👣 徒歩ナビ：三条・河原町</h5>
+                    <div class="flex items-center gap-2">
+                        <span>池田屋跡</span>
+                        <span class="text-gray-400">→ (2分) →</span>
+                        <span class="font-bold">酢屋</span>
+                        <span class="text-gray-400">→ (10分 / 約800m) →</span>
+                        <span class="font-bold">近江屋跡</span>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded border-l-4 border-red-600">
+                    <h4 class="font-bold mb-4 text-red-800">🚩 MISSION</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m3" class="mission-checkbox mt-1">
+                            <label for="m3" class="cursor-pointer">
+                                <strong>探索：</strong> 近江屋跡（醤油屋）の記念碑を探し、龍馬最期の地を確かめよ。
+                            </label>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m4" class="mission-checkbox mt-1">
+                            <label for="m4" class="cursor-pointer">
+                                <strong>問い：</strong> 池田屋事件が起きていなければ、明治維新は早まったか、それとも遅れたか？
+                                <div class="mt-2 border-b border-dashed border-gray-400 w-full h-8"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 伏見 -->
+            <div class="area-block bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="bg-orange-600 text-white px-3 py-1 text-sm font-bold rounded">LEVEL : 3</span>
+                        <h2 class="text-3xl font-bold mt-2">鳥羽伏見：戦火の開戦</h2>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">城南宮 / 鳥羽離宮跡 / 伏見奉行所跡</div>
+                </div>
+                <p class="mb-6 text-sm">
+                    1868年。鳥羽の小枝橋で放たれた一発の銃声が、日本の運命を決定づけました。
+                    最新鋭の装備を持つ官軍と、勇猛ながらも旧時代の装備で戦った旧幕府軍。その決定的な違いとは。
+                </p>
+                <!-- 徒歩ナビ追加 -->
+                <div class="mb-6 bg-gray-50 p-4 border rounded text-xs">
+                    <h5 class="font-bold mb-2 flex items-center gap-1">👣 徒歩ナビ：伏見・中書島</h5>
+                    <div class="flex items-center gap-2">
+                        <span>京阪中書島駅</span>
+                        <span class="text-gray-400">→ (10分) →</span>
+                        <span class="font-bold">寺田屋</span>
+                        <span class="text-gray-400">→ (15分) →</span>
+                        <span class="font-bold">伏見奉行所跡</span>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded border-l-4 border-orange-600">
+                    <h4 class="font-bold mb-4 text-orange-800">🚩 MISSION</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m5" class="mission-checkbox mt-1">
+                            <label for="m5" class="cursor-pointer">
+                                <strong>任務：</strong> 伏見に残る「銃眼（鉄砲を撃つ穴）」がある寺壁を探せ。
+                            </label>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m6" class="mission-checkbox mt-1">
+                            <label for="m6" class="cursor-pointer">
+                                <strong>分析：</strong> 「錦の御旗」が掲げられた瞬間、戦いの意味はどう変わったか？
+                                <div class="mt-2 border-b border-dashed border-gray-400 w-full h-8"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 霊山（東山） -->
+            <div class="area-block bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="bg-emerald-600 text-white px-3 py-1 text-sm font-bold rounded">LEVEL : FINAL</span>
+                        <h2 class="text-3xl font-bold mt-2">霊山：維新の結果と未来</h2>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">霊山歴史館 / 龍馬の墓</div>
+                </div>
+                <p class="mb-6 text-sm">
+                    京都の街を見下ろす東山の高台。ここには明治維新の「勝者」も「敗者」も、共に眠っています。
+                    激動の時代を駆け抜けた人々が、いまの私たちに何を問いかけているのかを考えます。
+                </p>
+                <!-- 徒歩ナビ追加 -->
+                <div class="mb-6 bg-gray-50 p-4 border rounded text-xs">
+                    <h5 class="font-bold mb-2 flex items-center gap-1">👣 徒歩ナビ：東山・霊山</h5>
+                    <div class="flex items-center gap-2">
+                        <span>京阪清水五条駅</span>
+                        <span class="text-gray-400">→ (徒歩15-20分 / 上り坂) →</span>
+                        <span class="font-bold">霊山歴史館・墓所</span>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded border-l-4 border-emerald-600">
+                    <h4 class="font-bold mb-4 text-emerald-800">🚩 MISSION</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m7" class="mission-checkbox mt-1">
+                            <label for="m7" class="cursor-pointer">
+                                <strong>探索：</strong> 坂本龍馬・中岡慎太郎の銅像を訪れ、彼らが見つめる「京都の街」を確認せよ。
+                            </label>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" id="m8" class="mission-checkbox mt-1">
+                            <label for="m8" class="cursor-pointer">
+                                <strong>最終考察：</strong> あなたにとって「維新」とは何か？（破壊か、それとも創造か）
+                                <div class="mt-2 border-b border-dashed border-gray-400 w-full h-8"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- 相関図 -->
+        <section class="mt-16">
+            <h2 class="text-2xl font-bold border-l-8 border-black pl-4 mb-10">幕末・維新の重要人物 相関図</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <!-- 幕府側 -->
+                <div class="border-2 border-blue-800 p-6 rounded bg-blue-50 relative">
+                    <div class="absolute -top-3 left-4 bg-blue-800 text-white px-4 py-1 font-bold text-sm">幕府・佐幕派</div>
+                    <div class="space-y-4">
+                        <div class="bg-white p-3 rounded shadow-sm border border-blue-200">
+                            <h3 class="font-bold">松平 容保</h3>
+                            <p class="text-xs text-blue-900">会津藩主・京都守護職</p>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm border border-blue-200">
+                            <h3 class="font-bold">近藤 勇 / 土方 歳三</h3>
+                            <p class="text-xs text-blue-900">新選組・京の治安維持</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 倒幕・革新派 -->
+                <div class="border-2 border-red-800 p-6 rounded bg-red-50 relative">
+                    <div class="absolute -top-3 left-4 bg-red-800 text-white px-4 py-1 font-bold text-sm">倒幕・尊皇攘夷派</div>
+                    <div class="space-y-4">
+                        <div class="bg-white p-3 rounded shadow-sm border border-red-200">
+                            <h3 class="font-bold">坂本 龍馬</h3>
+                            <p class="text-xs text-red-900">薩長同盟。新しい日本の構想</p>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm border border-red-200">
+                            <h3 class="font-bold">西郷 隆盛 / 桂 小五郎</h3>
+                            <p class="text-xs text-red-900">武力倒幕、そして明治新政府へ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-sm italic">
+                「敵」であっても、それぞれが「国を良くしたい」という正義に基づいて戦っていた。
+            </div>
+        </section>
+
+        <!-- メモスペース -->
+        <section class="mt-16 no-print">
+            <h2 class="text-2xl font-bold border-l-8 border-gray-400 pl-4 mb-6">思考の記録（フリーメモ）</h2>
+            <div class="notebook-lines p-4 border border-gray-300 min-h-[300px] rounded bg-white">
+                <!-- 行のみ表示される -->
+            </div>
+        </section>
+
+        <!-- 交通アクセス・距離感 -->
+        <section class="mt-16 p-8 border-2 border-[#5d4037] border-dashed rounded-lg bg-white">
+            <h3 class="text-xl font-bold mb-6 text-center serif text-[#5d4037]">旅の移動ガイド（エリア間の距離と時間）</h3>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                    <thead>
+                        <tr class="bg-[#5d4037] text-white">
+                            <th class="border p-2">区間</th>
+                            <th class="border p-2">移動手段</th>
+                            <th class="border p-2">所要時間</th>
+                            <th class="border p-2">距離/備考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-2 bg-gray-50 font-bold">壬生 ⇔ 三条</td>
+                            <td class="border p-2 text-center">市バス 11/26系統 または 阪急</td>
+                            <td class="border p-2 text-center">約15分</td>
+                            <td class="border p-2 text-center">約3.5km</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-2 bg-gray-50 font-bold">三条 ⇔ 伏見</td>
+                            <td class="border p-2 text-center">京阪本線（三条→中書島）</td>
+                            <td class="border p-2 text-center">約15-20分</td>
+                            <td class="border p-2 text-center">約10km</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-2 bg-gray-50 font-bold">伏見 ⇔ 霊山</td>
+                            <td class="border p-2 text-center">京阪（中書島→清水五条）</td>
+                            <td class="border p-2 text-center">約20分</td>
+                            <td class="border p-2 text-center">移動後、徒歩15分</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 text-xs text-gray-500 bg-amber-50 p-4 rounded">
+                <strong>※アドバイス：</strong> 京都の街歩きは意外と歩数が嵩みます。本日の推定移動距離は約15km、歩数は約18,000歩です。歩きやすい靴で、水分補給を忘れずに！
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="mt-20 text-center text-xs text-gray-400 py-8 border-t border-gray-100">
+            &copy; 2026 幕末京都フィールドワーク教材 | 印刷推奨: A4・片面
+        </footer>
+    </div>
+
+    <!-- 印刷用ボタン -->
+    <div class="fixed bottom-8 right-8 no-print">
+        <button onclick="window.print()"
+            class="bg-[#5d4037] text-white px-6 py-3 rounded-full shadow-2xl hover:bg-[#8d6e63] transition flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                    clip-rule="evenodd" />
+            </svg>
+            しおりを印刷する
+        </button>
+    </div>
+
+    <!-- シンプルなミッション挙動 -->
+    <script>
+        // Checkbox status logic could be added here if needed for persistence
+        // For now it's a simple local interaction
+    </script>
+</body>
+
+</html>
